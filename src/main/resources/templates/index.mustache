@@ -1,0 +1,45 @@
+{{>layout/header}}
+
+<div class="layout-main">
+    {{#userName}}
+        <div>
+            <a href="/logout" style="float:right; width:10%;" class="btn btn-info Light" role="button">로그아웃</a>
+            {{>layout/searchForm}}
+        </div><br><br><br>
+        <table class="table table-horizontal table-bordered">
+            {{>layout/tableForm}}
+            <tbody id="tbody">
+                {{#posts}}
+                    <tr>
+                        <th>{{id}}</th>
+                        <td><a href="/posts/view/{{id}}">{{title}}</a></td>
+                        <td>{{author}}</td>
+                        <td>{{modifiedDate}}</td>
+                        <td></td>
+                        <td><a href="/posts/update/{{id}}"><span class="glyphicon glyphicon-cog"></span></a>
+                    </tr>
+                {{/posts}}
+            </tbody>
+        </table>
+        <div class="layout-bottom">
+            <a href="/posts/save" role="button" style="font-size: 20px; margin:15px auto; float:right;" class="btn btn-light"><span class="glyphicon glyphicon-pencil"></span></a>
+            {{>layout/pagination}}
+        </div>
+    {{/userName}}
+
+    {{^userName}}
+        <div class="nav-right">
+        <a href='/oauth2/authorization/google' class='btn btn-danger' style="width:12em;">Sign in with Google</a>
+        <a href='/oauth2/authorization/naver' class="btn btn-success" style="width:12em;">Sign in with Naver</a>
+        </div><br><br><br>
+        <div class="layout-main">
+            <p>This is WebProgramming Final Project !</p>
+            <p>Final Community is a platform that allows you to organize your space in a systematic way.</p>
+            <p>Have fun organizing various things.</p>
+            <p>You can start with Google login or Naver login. <span class="glyphicon glyphicon-thumbs-up"></span></p>
+            <img src="/images/8290.jpg" alt="" />
+        </div>
+    {{/userName}}
+</div>
+
+{{>layout/footer}}
