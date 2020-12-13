@@ -1,7 +1,7 @@
 # springboot2-webservice-community
 
 
-## 0스프링부트를 이용한 웹 서비스 개발
+# 스프링부트를 이용한 웹 서비스 개발
 
 
 
