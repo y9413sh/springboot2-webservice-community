@@ -6,21 +6,19 @@
     </div><br><br><br>
 
     <table class="table table-horizontal table-bordered">
-        {{>layout/tableForm}}
-        <tbody id="tbody">
+        <thead class="thead-strong">
+            <tr>
+                <th style="width: 5%">No.</th>
+                <th style="width: 33%">제목</th>
+                <th style="width: 22%">작성자</th>
+                <th style="width: 25%">게시날짜</th>
+                <th style="width: 10%">조회수</th>
+                <th style="width: 5%"></th>
+            </tr>
+        </thead>
         {{#searchList}}
-            {{#posts}}
-                <tr>
-                    <th>{{id}}</th>
-                    <td><a href="/posts/view/{{id}}">{{title}}</a></td>
-                    <td>{{author}}</td>
-                    <td>{{modifiedDate}}</td>
-                    <td></td>
-                    <td><a href="/posts/update/{{id}}"><span class="glyphicon glyphicon-cog"></span></a>
-                </tr>
-            {{/posts}}
+            {{>layout/tableForm}}
         {{/searchList}}
-        </tbody>
     </table>
     <a href="/posts/save" role="button" style="font-size: 20px; margin:15px auto; float:right;" class="btn btn-light"><span class="glyphicon glyphicon-pencil"></span></a>
     {{>layout/pagination}}
