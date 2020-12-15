@@ -74,11 +74,11 @@ public class IndexController {
 
     @GetMapping("/posts/view/{id}")
     public String postsView(@PathVariable Long id, Model model) {
-        //postsService.updateView(id);
         SessionUser user=(SessionUser)httpSession.getAttribute("user");
         model.addAttribute("userEmail", user.getEmail());
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("posts", dto);
+        postsService.updateView(id);
 
         return "posts-view";
     }

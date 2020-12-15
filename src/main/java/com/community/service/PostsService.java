@@ -10,7 +10,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -66,6 +65,11 @@ public class PostsService {
         return check;
     }
 
+    @Transactional
+    public int updateView(Long id) {
+        return postsRepository.updateView(id);
+    }
+
     /*@Transactional
     public int updateView(Long id) {
         return postsRepository.updateView(id);
@@ -74,7 +78,6 @@ public class PostsService {
     @Transactional
     public List<Posts> search(String keyword) {
         List<Posts> postsList = postsRepository.findByTitleContaining(keyword);
-
         return postsList;
     }
 

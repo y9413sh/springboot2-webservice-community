@@ -9,13 +9,13 @@ public class PostsResponseDto {
     private String title;
     private String author;
     private String content;
-    //private int views;
+    private int views;
 
     public PostsResponseDto(Posts entity) {
         this.id=entity.getId();
         this.title=entity.getTitle();
         this.author=entity.getAuthor();
         this.content=entity.getContent();
-       // this.views=entity.getViews();
+        this.views=entity.getViews();
     }
 }
