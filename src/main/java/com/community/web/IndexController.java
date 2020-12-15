@@ -27,8 +27,9 @@ public class IndexController {
     @GetMapping("/")
     public String index(Long id, Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         SessionUser user=(SessionUser)httpSession.getAttribute("user");
+
         model.addAttribute("posts", postsService.getPostsList(pageable));
-        model.addAttribute("check", postsService.getListCheck(pageable));
+        model.addAttribute("checkNext", postsService.getNextCheck(pageable));
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("pageNum", pageable.getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
@@ -42,14 +43,9 @@ public class IndexController {
     }
 
     @GetMapping("/posts/search")
-    public String search(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable ,Model model) {
-        List<Posts> searchList = postsService.search(keyword, pageable);
-        model.addAttribute("posts", postsService.getPostsList(pageable));
-        model.addAttribute("check", postsService.getListCheck(pageable));
-        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
-        model.addAttribute("pageNum", pageable.getPageNumber());
-        model.addAttribute("next", pageable.next().getPageNumber());
-        model.addAttribute("searchList", searchList);
+    public String search(String keyword, Model model) {
+
+        model.addAttribute("searchList", postsService.search(keyword));
         return "posts-search";
     }
 

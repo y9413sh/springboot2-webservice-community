@@ -18,9 +18,9 @@
                 <th style="width: 5%"></th>
             </tr>
             </thead>
-
-            {{>layout/tableForm}}
-
+            {{#posts}}
+                {{>layout/tableForm}}
+            {{/posts}}
         </table>
         <div class="layout-bottom">
             <a href="/posts/save" role="button" style="font-size: 20px; margin:15px auto; float:right;" class="btn btn-light"><span class="glyphicon glyphicon-pencil"></span></a>

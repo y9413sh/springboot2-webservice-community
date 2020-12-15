@@ -1,7 +1,8 @@
 {{>layout/header}}
 <div class="layout-main">
+
     <div>
-        <a href="/logout" style="float:right; width:10%;" class="btn btn-info Light" role="button">로그아웃</a>
+        <br><h1>검색 페이지</h1><br>
         {{>layout/searchForm}}
     </div><br><br><br>
 
@@ -20,7 +21,10 @@
             {{>layout/tableForm}}
         {{/searchList}}
     </table>
-    <a href="/posts/save" role="button" style="font-size: 20px; margin:15px auto; float:right;" class="btn btn-light"><span class="glyphicon glyphicon-pencil"></span></a>
-    {{>layout/pagination}}
+
+    <div class="nav-right">
+        <a href="/" role="button" class="btn btn-secondary">목록</a>
+    </div>
+
 </div>
 {{>layout/footer}}

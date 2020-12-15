@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -55,12 +56,12 @@ public class PostsService {
     }
 
     @Transactional
-    public Boolean getListCheck(Pageable pageable) {
+    public Boolean getNextCheck(Pageable pageable) {
         Page<Posts> saved = getPostsList(pageable);
-        if(pageable.getPageNumber() == 0) {
+        if(pageable.getPageNumber() == 1) {
             pageable.next().getPageNumber();
         }
-            Boolean check = saved.hasNext();
+        Boolean check = saved.hasNext();
 
         return check;
     }
@@ -71,10 +72,16 @@ public class PostsService {
     }*/
 
     @Transactional
-    public List<Posts> search(String keyword, Pageable pageable) {
-        List<Posts> postsList = postsRepository.findByTitleContaining(keyword, pageable);
+    public List<Posts> search(String keyword) {
+        List<Posts> postsList = postsRepository.findByTitleContaining(keyword);
+
         return postsList;
     }
 
-
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }
