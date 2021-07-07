@@ -3,14 +3,14 @@
 
 # 스프링부트를 이용한 웹 서비스 개발
 
-![1](https://user-images.githubusercontent.com/55368870/124806155-55f35c00-df97-11eb-96a3-d111454747a5.png)
-![2](https://user-images.githubusercontent.com/55368870/124806158-568bf280-df97-11eb-87be-933c9a2399d5.png)
-![3](https://user-images.githubusercontent.com/55368870/124806160-57248900-df97-11eb-96ee-2ad4b9754715.png)
-![4](https://user-images.githubusercontent.com/55368870/124806163-57248900-df97-11eb-91d1-5a57b003d306.png)
-![5](https://user-images.githubusercontent.com/55368870/124806165-57bd1f80-df97-11eb-8921-bbf5202a3d5d.png)
-![6](https://user-images.githubusercontent.com/55368870/124806167-57bd1f80-df97-11eb-8d01-b5b25e0d34a6.png)
-![7](https://user-images.githubusercontent.com/55368870/124806149-54299880-df97-11eb-80d3-9f0c6faf2973.png)
-![8](https://user-images.githubusercontent.com/55368870/124806153-555ac580-df97-11eb-98f7-5807a82c713c.png)
+![1](https://user-images.githubusercontent.com/55368870/124806815-10835e80-df98-11eb-9ef6-0495e9abc7f3.png)
+![2](https://user-images.githubusercontent.com/55368870/124806818-111bf500-df98-11eb-8279-5cbd81436301.png)
+![3](https://user-images.githubusercontent.com/55368870/124806821-11b48b80-df98-11eb-9905-b5e1911549f1.png)
+![4](https://user-images.githubusercontent.com/55368870/124806825-11b48b80-df98-11eb-901f-b9afe42f2c8a.png)
+![5](https://user-images.githubusercontent.com/55368870/124806830-124d2200-df98-11eb-90fd-660eae881da9.png)
+![6](https://user-images.githubusercontent.com/55368870/124806832-124d2200-df98-11eb-956a-0eed24dc1d0f.png)
+![7](https://user-images.githubusercontent.com/55368870/124806806-0eb99b00-df98-11eb-85a3-96ed64f4d375.png)
+![8](https://user-images.githubusercontent.com/55368870/124806811-0feac800-df98-11eb-892c-86c639e70be7.png)
 
 # 주요 기능
 - 소셜 로그인 (OAuth 2.0)
